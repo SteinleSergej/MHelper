@@ -22,9 +22,9 @@ input_field = tkinter.Entry(root,width=20,font=field_font)
 output_field = tkinter.Entry(root,width=20,font=field_font)
 equal_label = tkinter.Label(root,text="=",font=field_font,bg=bg_color)
 
-input_field.grid(row=0,column=0)
+input_field.grid(row=0,column=0,padx=10,pady=10)
 equal_label.grid(row=0,column=1)
-output_field.grid(row=0,column=2)
+output_field.grid(row=0,column=2,padx=10,pady=10)
 
 input_field.insert(0,"The input comes here")
 
@@ -37,8 +37,8 @@ output_choice = StringVar()
 #Drop downs
 input_dropdown = tkinter.OptionMenu(root,input_choice,*bin_list)
 output_dropdown = tkinter.OptionMenu(root,output_choice,*bin_list)
-input_dropdown.grid(row=1,column=0,sticky="EW",pady=(10,4))
-output_dropdown.grid(row=1,column=2,sticky="EW",pady=(10,4))
+input_dropdown.grid(row=1,column=0,sticky="EW",pady=(10,4),padx=10)
+output_dropdown.grid(row=1,column=2,sticky="EW",pady=(10,4),padx=10)
 
 #set standard i/0-choices
 input_choice.set("Bit")
