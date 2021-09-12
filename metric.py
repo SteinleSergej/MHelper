@@ -43,5 +43,10 @@ output_dropdown.grid(row=1,column=2,sticky="EW",pady=(10,4))
 #set standard i/0-choices
 input_choice.set("Bit")
 output_choice.set("Byte")
+
+#create convert button
+convert_button = tkinter.Button(root,text="Convert",font=field_font,bg=button_color)
+
+convert_button.grid(row=2,column=0,columnspan=3,sticky="NESW")
 #Run the root window
 root.mainloop()
