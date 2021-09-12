@@ -1,5 +1,6 @@
 
 import tkinter
+from tkinter import StringVar, font
 
 #define window
 root= tkinter.Tk()
@@ -19,7 +20,28 @@ root.config(bg=bg_color)
 #Define layout
 input_field = tkinter.Entry(root,width=20,font=field_font)
 output_field = tkinter.Entry(root,width=20,font=field_font)
-equal_label = tkinter.Label(root,text="=")
+equal_label = tkinter.Label(root,text="=",font=field_font,bg=bg_color)
 
+input_field.grid(row=0,column=0)
+equal_label.grid(row=0,column=1)
+output_field.grid(row=0,column=2)
+
+input_field.insert(0,"The input comes here")
+
+
+#Create dropdowns for values
+bin_list = ["Bit","Byte","KByte","MByte","GByte"]
+input_choice = StringVar()
+output_choice = StringVar()
+
+#Drop downs
+input_dropdown = tkinter.OptionMenu(root,input_choice,*bin_list)
+output_dropdown = tkinter.OptionMenu(root,output_choice,*bin_list)
+input_dropdown.grid(row=1,column=0,sticky="EW",pady=(10,4))
+output_dropdown.grid(row=1,column=2,sticky="EW",pady=(10,4))
+
+#set standard i/0-choices
+input_choice.set("Bit")
+output_choice.set("Byte")
 #Run the root window
 root.mainloop()
